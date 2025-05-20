@@ -11,7 +11,7 @@ void alterar(country &p1){
     cin>>p1.nome;
 }
 
-void imprime(country &p1){
+void imprime(country p1){
     cout<<"País: "<<p1.nome<<"\t"<<"População: "<<p1.populacao<<endl;
 }
 int main(){
