@@ -8,20 +8,26 @@ struct aluno{
     char sexo;
 };
 
-void imprime(int tamanho, aluno alunos[]){
+void imprime(aluno alunos[], int tamanho){
+    cout<<""<<endl;
+    cout<<"--------------------------"<<endl;
     for(int i = 0; i<tamanho; i++){
-        cout<<alunos[i].nome<< " ";
-        cout<<alunos[i].n1<<" ";
-        cout<<alunos[i].n2<< " ";
-        cout<<alunos[i].sexo<<endl;
+        cout<<"Nome: "<< alunos[i].nome<< " ";
+        cout<<"Nota 1: "<< alunos[i].n1<<" ";
+        cout<<"Nota 2: "<< alunos[i].n2<< " ";
+        cout<<"Sexo: "<< alunos[i].sexo<<endl;
+        cout << endl;
     }
 }
 
 float calculaMedia (aluno alunos[], int total){
-    float media;
-    //fazer isso aqui depois
+    float mediaMasc, soma = 0;
+    int cont = 0;
+    for (int i = 0; i < total; i++){
+        soma += alunos[i].n1 + alunos[i].n2;
+    }
 
-    return media;
+    return soma / (total * 2);
 }
 
 int main(){
@@ -39,7 +45,11 @@ int main(){
         cin>>alunos[i].sexo;
     }
 
-    imprime(tamanho,alunos);
+    imprime(alunos, tamanho);
+
+    float media = calculaMedia(alunos, tamanho);
+    cout<<"Media da turma "<<media<<endl;
 
     return 0;
 }
+//falta a media dos alunos do sexo masculino

@@ -26,7 +26,7 @@ int main(){
     cout<<"Digite um numero: ";
     cin>>n;
     if(ehHarshad(n)){
-        cout<<"verdadeiro";
+        cout<<true;
     }else{
         cout<<"Não é Harshad";
     }
